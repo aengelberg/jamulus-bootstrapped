@@ -61,3 +61,34 @@ In the Authentication section, upload your SSH key. Or if you aren't comfortable
 Finally, create your Droplet.
 
 <img width=50% src="https://user-images.githubusercontent.com/4122172/114343705-52287880-9b13-11eb-9386-13b34ab76978.png"/>
+
+This should take a minute or so to start up. Find the new Droplet's IP address, and connect to it from your Jamulus client:
+
+<img width=50% src="https://user-images.githubusercontent.com/4122172/114343941-c8c57600-9b13-11eb-8a37-63c169cf6b51.png"/>
+
+### Debugging
+
+If Jamulus isn't automatically started up, log into the machine and confirm that the container is running via `docker ps`. If it isn't, you can try again by manually re-entering the `docker run` command from above.
+
+You can also debug the startup script (to see if it successfully started up Jamulus) with `cat /var/log/cloud-init-output.log`. If it was successful you'd see something like:
+```
+Unable to find image 'grundic/jamulus:latest' locally
+latest: Pulling from grundic/jamulus
+e95f33c60a64: Pulling fs layer
+e10f3b93c3bf: Pulling fs layer
+f03ba9a3a39b: Pulling fs layer
+e95f33c60a64: Verifying Checksum
+e95f33c60a64: Download complete
+f03ba9a3a39b: Verifying Checksum
+f03ba9a3a39b: Download complete
+e10f3b93c3bf: Verifying Checksum
+e10f3b93c3bf: Download complete
+e95f33c60a64: Pull complete
+e10f3b93c3bf: Pull complete
+f03ba9a3a39b: Pull complete
+Digest: sha256:7bbec11680263de1f66396499f0a77effa889fabe5f0e7de08b5fecd03803758
+Status: Downloaded newer image for grundic/jamulus:latest
+fc9a59db4871302d094c8a050a89c9d5642f3c19b96459d8c83f5147242a6b36
+```
+
+DigitalOcean provides a "Rebuild Droplet" command in the "Destroy" menu, which will reset it to original settings and re-execute the `#cloud-config` script you originally provided.
