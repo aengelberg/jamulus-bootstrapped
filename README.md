@@ -34,7 +34,7 @@ In the section for additional options, check the "User data" box and the "Monito
 
 <img width=50% src="https://user-images.githubusercontent.com/4122172/114342064-fb6d6f80-9b0f-11eb-9dc3-7dc90aedd468.png"/>
 
-A "User Data" text box will appear. Here we'll tell the Droplet to start Jamulus after it boots up. Copy the following config into that text box.
+A new text box for "user data" will appear. Here we'll tell the Droplet to start Jamulus after it boots up. Copy the following config into that text box.
 
 ```yaml
 #cloud-config
@@ -50,6 +50,14 @@ The second line of flags are Jamulus's [Command Line Options](https://jamulus.io
 
 (TODO: explain how to set up recording via a docker volume)
 
-In the Authentication section, upload your SSH key. Or if you aren't familiar with SSH, 
+In the Authentication section, upload your SSH key. Or if you aren't comfortable using SSH, create a new root password and hold onto it. These are only useful if you want to log into the machine and run commands while it's online.
 
 <img width=50% src="https://user-images.githubusercontent.com/4122172/114343406-a7b05580-9b12-11eb-8c2a-eba2751f400b.png"/>
+
+(Optional) Enable the "backups" feature for an extra $1/month. This is only useful if you want to back up any saved recordings.
+
+<img width=50% src="https://user-images.githubusercontent.com/4122172/114343613-168dae80-9b13-11eb-9a12-96213720c953.png"/>
+
+Finally, create your Droplet.
+
+<img width=50% src="https://user-images.githubusercontent.com/4122172/114343705-52287880-9b13-11eb-9386-13b34ab76978.png"/>
