@@ -16,4 +16,4 @@ Create a DigitalOcean Account, and go to the cloud portal.
 
 Create a new Droplet:
 
-<img href="https://user-images.githubusercontent.com/4122172/114340901-6e291b80-9b0d-11eb-9056-5feddf341e10.png" width="50" />
+<img href="https://user-images.githubusercontent.com/4122172/114340901-6e291b80-9b0d-11eb-9056-5feddf341e10.png" width="300" />
